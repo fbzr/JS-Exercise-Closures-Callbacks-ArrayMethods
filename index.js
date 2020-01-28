@@ -274,11 +274,22 @@ function counterMaker() {
  * counter() // should return 0
  * etc
 */
+// function counterMakerWithLimit(max) {
+//   let count = 0;
+
+//   return () => {
+//     if (count > max) {
+//       count = 0;
+//     } 
+//     return count++;
+//   }
+// }
+
 function counterMakerWithLimit(max) {
   let count = 0;
 
   return () => {
-    if (count === 4) {
+    if (count > max) {
       count = 0;
     } 
     return count++;
